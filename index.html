@@ -1,214 +1,384 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport">
-    <title>逆次元ACG最新地址发布页</title>
-    <meta name="keywords" content="最新地址发布页,逆ACG,逆次元官网,逆次元漫画,逆次元永久发布页">
-    <meta name="description" content="逆次元ACG最新地址发布页,回家不迷路">
-    <!--link rel="shortcut icon" href="favicon.ico"-->
-    <style type="text/css">
-      *{padding:0;margin:0}
-      body{background-color:#00c250;color:#fff;font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif}
-      #main{margin:10px auto;display:flex;justify-content:center;flex-direction:column;align-items:center}
-      .field{width:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:#6c757d;font-size:16px;padding:15px;margin:5px auto;border-radius:6px}
-      .field.foot {font-size:14px;}
-      .field.desc ul>li{text-align:left;font-size:14px}
-      @media (max-width:500px){#main{padding:0 5px}
-      .field{width:100%;padding:15px 0}
-      .field.desc ul{margin:0 15px}
-      .field.desc ul>li{text-align:left}
-      }
-      ul>li{margin-bottom:10px;list-style-type:none;text-align:center}
-      ul>li.text{font-size:12px;clear:both;width:100%}
-      .field .title{margin-bottom:15px;font-weight:700;color:#343a40}
-      a,a:active,a:focus,a:hover,a:visited{color:inherit;text-decoration:none}
-      .brand{display:flex;align-items:center;justify-content:flex-start;text-align:center;color:#000;font-size:30px;font-weight:200;padding:20px;cursor:pointer}
-      .brand span{color:#fff;font-weight:600}
-      .brand span.flag{color:#00c250;background:#fff;border-radius:6px;font-size:20px;font-weight:700;display:inline-block;padding:0 5px;margin-left:5px}
-      .enter-maomi{width:75%;text-align:center;line-height:40px;border:1px solid #00c250;border-radius:4px;margin-bottom:20px;margin-top:10px}
-      .enter-icon{width:32px;height:41px;float:left;margin-right:5px;background-color:#00c250}
-      .enter-ping{width:80px;height:41px;float:right;background-color:#00c250}
-          .enter-ping-2{width:80px;height:41px;float:right;background-color:#00c250}
-      .enter-link a{display:block}
-      .icon{width:20px;height:20px;background-position:center;background-size:contain;background-repeat:no-repeat;display:inline-block}
-      .icon_hand{width:27px;height:27px;vertical-align:middle;background-image:url(data:image/png;base64,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);padding-top:12px}
-      .c_black{color:#333;line-height:30px;font-size:12px}
-      .c_blue{color:#00c250}
-      .c_link{font-size:14px;line-height:30px}
-      .fri_link{overflow:hidden;width:80%}
-      .fri_link li{float:left;display:block;font-size:.875rem;width:33.33333333%}
-      .icon_ios_shared{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAHsSURBVGiB7ZvLasJAFEBvnsYXhFoKXaRLi/QHWrppl/2mrvtL3dZlf0AElxXsRiVgo+bdTVJEUmUmyYTc3ANCTGbuneMMmTEPKY5jaBJy1Q0QTeOEVZbCN6+z3Akt05A3bjhVZGmxcrznvPG+3oZM5YX2cCpr7/zhyvGeBl39Q2R+AIHClmmoqWy678cNHi3TYBpleREinMhODmUBANwg0jZuOLFMQ9gPX3qiLNmWKvvptr3zhxs3nIqSLjVJlqzZ1mZXPb1ntrW/M6BI6dIS/Cfbbymjub33+i3lrgrpUoKfkY0AAOb2PqhCuvDAydRzUjYlS1qRpcVxuSIpXHhu7yNFlr7T7xmy8cEnlR6ZbW026OrjIhYjpyhlDkwWFeMwiq+zevaY5PhtGW05prRJf+V4TwAA9s4/U1IsjfvzQMLYIWHskDB2WOdhlkucEmNsITlq3cMdXXFY69RaeOuFHdY63EvLi472eer4esu3pDwXN4l9zxUccgivt/4Db90C4nLfLqn1kOaBhLFDwtghYeyQMHZIGDskjB0Sxg4JY4eEsSP0obAE3uvVhdC4HiZh7JAwdhonzD0tXXb19yIbwsLS8bjrcgsvHe+FO2uFMA3plir7h8861xGmHnaDSE82a/uyk0QvaiGnccK/XaTidYL+GAMAAAAASUVORK5CYII=)}
-      .icon_android_share{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAFYSURBVGiB7doxSgNBFMbxt5PZrGFWCMHCgAg2Fp7CUj1DbmBhZ2Ntk87CC3gIsfQWgo0gFoJRAm4YN7uZsTDKGtLOG3j7/cpt3v4TAl+RxHtPbaJivwA3BEuHYOkQLB2CpUOwdAiWrnXBmuPI7sUjDY0Zfc7nV0VVDbRSvp9ldxNrT54v9zle4Q/LN7yT53tv1t4UVTUgIqqdSybWHm/1ercc95tYgr8Wi+vauWT1+bQsjzjuN0X9Da/7EEJjCdZK3a97nqfpB8f9Jpbg19ls3M+yh+YzrZTf7HbPOO7/u8t1aFqWB9vGnNfOHRIRbXQ6py9F8cR1/xdbMNHPN01EY86bq1o3PBAsHYJDGRozytP0nYi8VsrFmJVE2NJhYEsvYUszwJYOBVs6EgwP6RAsHbZ0CNjSS9jSDLClQ8CWpnhbOsG/aYVDsHQIlg7B0iFYOgRLh2DpvgEr5a2EBqrivQAAAABJRU5ErkJggg==)}
-      .text-white{color: #fff;}
-    </style>
-  </head>
-  <body>
-    <div id="main">
-      <div class="brand" id="logo">
-        <span>逆次元</span><span class="flag">永久发布页</span>
-      </div>
-      <div class="field">
-            <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://xpicvid.org" target="_blank"><span class="c_blue">xpicvid.org</span> </a>
-          </div>
-        </div>
-		<div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://xpicvid.net" target="_blank"><span class="c_blue">xpicvid.net</span> </a>
-          </div>
-        </div>
-        <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://freeacg3.org" target="_blank"><span class="c_blue">freeacg3</span> </a>
-          </div>
-        </div>
-        <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://acgbay.com" target="_blank"><span class="c_blue">acgbay</span> </a>
-          </div>
-        </div>
-        <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping-2">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link-2">
-            <a href="https://m.acg.gdn" target="_blank"><span class="c_blue">用户名:acg密码:9990</span> </a>
-          </div>
-        </div>
-        <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://freeacg.org" target="_blank"><span class="c_blue">freeacg</span> </a>
-          </div>
-        </div>
-        <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping-2">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link-2">
-            <a href="https://freeacg4.org" target="_blank"><span class="c_blue">freeacg4</span> </a>
-          </div>
-        </div>
-        <div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://acg.bz" target="_blank"><span class="c_blue">acg.bz</span> </a>
-          </div>
-        </div>
-		<div class="enter-maomi">
-          <div class="enter-icon">
-            <div class="icon icon_hand"></div>
-          </div>
-          <div class="enter-ping">
-            <span class="text-white">0 ms</span>
-          </div>
-          <div class="enter-link">
-            <a href="https://acg.al" target="_blank"><span class="c_blue">地址</span> </a>
-          </div>
-        </div>
-        <p class="c_blue c_link">请多多访问支持</p>
-      </div>
-      <div class="field ">
-        <h4 class="title">✉ 联络邮件</h4>
-        <ul>
-          <li><a><span class="__cf_email__" data-cfemail="b9d8d0f9dcccd5d897dccc97d6cbde">[email&#160;protected]</span></a></li>
-        </ul>
-        <ul>
-          <li><a>您也可以发送任意文字到上面的邮箱 自动回复最新地址</a></li>
-                  <li><a>发送后请等待几秒,刷新一下邮箱,可能在垃圾箱中</a></li>
-        </ul>
-      </div>
-      <div class="field desc">
-        <h4 class="title">✐ 溫馨提示</h4>
-        <ul>
-          <li>* 推荐使用谷歌(Chrome)浏览器访问本站，谷歌浏览器速度更快，iPhone建议使用手机自带Safria浏览器访问。</li>
-          <li>* 如果您记不住本站域名，请收藏该页地址，收藏并分享给好朋友。</li>
-          <p class="c_black">1、使用电脑的用户，请按键盘上的CTRL+D进行收藏</p>
-          <p class="c_black">2、苹果手机用户在浏览器点击<span class="icon icon_ios_shared small-img"></span>，然后添加到个人收藏或主屏幕。</p>
-          <p class="c_black">3、安卓手机用户点击<span class="icon icon_android_share small-img"></span>，或者打开浏览器设置，添加到书签或主屏幕。</p>
-        </ul>
-      </div>
-      <div class="field foot">
-        <p><a href="https://02.uno/" rel="nofollow" target="_blank">02.uno</a></p>
-        <p>Copyright © 2024</p>
-      </div>
-    </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script language="javascript">
-  const obj = document.querySelectorAll('.enter-link a');
-  const sbj = document.querySelectorAll('.enter-ping span');
-  const startTime = {}; // 存储开始时间
 
-  for (var i = 0; i < obj.length; i++) {
-    var pobj = document.querySelector('.field');
-    var img = document.createElement('img');
-    // 构造 favicon.ico URL
-    const faviconUrl = obj[i].href + '/favicon.ico';
-    img.setAttribute('src', faviconUrl + '?' + Math.random()); // 添加随机数以防缓存
+<!DOCTYPE html><html>
 
-    // 记录开始时间
-    startTime[i] = performance.now();
+<head>
+    <title>上海海事大学单点登录系统</title>
+    <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /></title>
 
-    img.setAttribute('onload', 'uomg(' + i + ', false)'); // 加载成功时调用
-    img.setAttribute('onerror', 'uomg(' + i + ', true)'); // 加载失败时调用
-    img.setAttribute('style', 'display:none');
-    pobj.appendChild(img);
-  }
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" type="text/css" href="/cas/webjars/normalize.css/8.0.1/normalize.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/bootstrap/5.1.0/css/bootstrap-grid.min.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/material-components-web/12.0.0/dist/material-components-web.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/mdi__font/5.8.55/css/materialdesignicons.css" /><link rel="stylesheet" type="text/css" href="/cas/css/cas.css"/><link rel="shortcut icon" href="/cas/favicon.ico" /></head>
 
-  function uomg(index, isError = false) {
-    if (isError) {
-      sbj[index].innerText = 'error'; // 显示错误
-      // 将目标连接的 enter-ping 的背景色改为红色
-      sbj[index].parentElement.style.backgroundColor = 'red'; // 修改背景色为红色
-    } else {
-      const loadTime = Math.round(performance.now() - startTime[index]); // 计算加载时间
-      sbj[index].innerText = loadTime + ' ms'; // 显示加载时间
-      // 重置背景颜色
-      sbj[index].parentElement.style.backgroundColor = ''; // 重置背景色
+<body class="login mdc-typography">
+<script type="text/javascript" src="/cas/webjars/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="/cas/webjars/es5-shim/4.5.9/es5-shim.js"></script>
+    <script type="text/javascript" src="/cas/webjars/css-vars-ponyfill/2.3.1/dist/css-vars-ponyfill.min.js"></script>
+    <script type="text/javascript" src="/cas/webjars/material-components-web/12.0.0/dist/material-components-web.js"></script>
+<script type="text/javascript" src="/cas/js/cas.js"></script>
+<script>
+    if (typeof resourceLoadedSuccessfully === "function") {
+        resourceLoadedSuccessfully();
     }
-  }
+    $(function() {
+        cssVars({onlyLegacy: true});
+    })
 </script>
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99ac496f8e7204b7',t:'MTc2MjUxMjgwNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+<script>
+    /*<![CDATA[*/
+
+    var trackGeoLocation = false;
+
+    var googleAnalyticsTrackingId = null;
+
+    if (googleAnalyticsTrackingId != null && googleAnalyticsTrackingId != '') {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', googleAnalyticsTrackingId, 'auto');
+        ga('send', 'pageview');
+    }
+
+    /*]]>*/
+</script>
+<div>
+
+    <header id="app-bar" class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4">
+        <nav class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                </section>
+            <section class="mdc-top-app-bar__section">
+                    <span class="cas-brand mx-auto">
+                        <span class="sr-only">上海海事大学单点登录系统</span>
+                        <img id="cas-logo" class="cas-logo"
+                             title="上海海事大学单点登录系统"
+                             src="img/smulogo.svg" /></span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                </section>
+        </nav>
+
+    </header>
+    <script>var countMessages = 0;</script>
+    <script type="text/javascript">
+
+        (function (material) {
+            var header = {
+                init: function () {
+                    header.attachTopbar();
+                    material.autoInit();
+                },
+                attachDrawer: function () {
+                    var elm = document.getElementById('app-drawer');
+                    if (elm != null) {
+                        var drawer = material.drawer.MDCDrawer.attachTo(elm);
+                        var closeDrawer = function (evt) {
+                            drawer.open = false;
+                        };
+                        drawer.foundation.handleScrimClick = closeDrawer;
+                        document.onkeydown = function (evt) {
+                            evt = evt || window.event;
+                            if (evt.keyCode == 27) {
+                                closeDrawer();
+                            }
+                        };
+                        header.drawer = drawer;
+                        return drawer;
+                    }
+                    return undefined;
+                },
+                attachTopbar: function (drawer) {
+
+                    var drawer = header.attachDrawer();
+                    var dialog = header.attachNotificationDialog();
+
+                    if (drawer != undefined) {
+                        header.attachDrawerToggle(drawer);
+                    }
+                    if (dialog != undefined) {
+                        header.attachNotificationToggle(dialog);
+                    }
+                },
+                checkCaps: function (ev) {
+                    var s = String.fromCharCode(ev.which);
+                    if (s.toUpperCase() === s && s.toLowerCase() !== s && !ev.shiftKey) {
+                        ev.target.parentElement.classList.add('caps-on');
+                    } else {
+                        ev.target.parentElement.classList.remove('caps-on');
+                    }
+                },
+                attachDrawerToggle: function (drawer) {
+                    let appBar = document.getElementById('app-bar');
+                    if (appBar != null) {
+                        var topAppBar = material.topAppBar.MDCTopAppBar.attachTo(appBar);
+                        topAppBar.setScrollTarget(document.getElementById('main-content'));
+                        topAppBar.listen('MDCTopAppBar:nav', function () {
+                            drawer.open = !drawer.open;
+                        });
+                        return topAppBar;
+                    }
+                    return undefined;
+                },
+                attachNotificationDialog: function () {
+                    var element = document.getElementById('cas-notification-dialog');
+                    if (element != null) {
+                        return material.dialog.MDCDialog.attachTo(element);
+                    }
+                    return undefined;
+                },
+                attachNotificationToggle: function (dialog) {
+                    var btn = document.getElementById('cas-notifications-menu');
+                    if (btn != null) {
+                        btn.addEventListener('click', function () {
+                            dialog.open();
+                        });
+                    }
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                header.init();
+                if (countMessages == 0) {
+                    window.jQuery('#notifications-count').remove();
+                } else {
+                    window.jQuery('#notifications-count').text("(" + countMessages + ")")
+                }
+            });
+        })(mdc);
+    </script>
+</div>
+
+<div class="mdc-drawer-scrim"></div>
+
+<div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust d-flex justify-content-center">
+    <main role="main" id="main-content" class="container-lg py-4">
+        <div id="content" class="d-flex justify-content-center">
+
+    <div class="d-flex justify-content-center flex-md-row flex-column mdc-card mdc-card-content w-lg-25">
+        <section id="loginForm"
+                 class="login-section login-form">
+            <div class="d-flex flex-column justify-content-between m-auto">
+        
+                <div class="text-center logintitle">
+                    <img src="img/smulogo.svg" id="logo"><span>统一身份认证</span>
+                </div>
+    
+    <!--
+        <div th:if="${delegatedAuthenticationProviderPrimary == null}">
+            <div th:if="${!#strings.isEmpty(#themes.code('cas.hero-banner.file'))}">
+                <p>
+                    <img id="heroimg"
+                         th:title="${#strings.defaultString(#themes.code('cas.theme.name'), 'CAS')}"
+                         th:src="@{${#themes.code('cas.hero-banner.file')}}"/>
+                </p>
+            </div>
+            <div class="service-ui" th:replace="fragments/serviceui :: serviceUI">
+                <a href="fragments/serviceui.html">service ui fragment</a>
+            </div>
+        </div>
+--><div class="form-wrapper">
+
+    <form method="post" id="fm1" action="login">
+        <span id="login-form-controls">
+            <!--
+            <h3 th:unless="${existingSingleSignOnSessionAvailable}" class="text-center">
+                <i class="mdi mdi-security"></i>
+                <span th:utext="#{screen.welcome.instructions}">Enter your Username and Password:</span>
+            </h3>
+--><section class="cas-field my-3" id="usernameSection">
+                <div class="d-flex">
+
+                    <label for="username" class="mdc-text-field mdc-text-field--outlined">
+                        <input class="mdc-text-field__input"
+                               id="username"
+                               size="25"
+                               type="text"
+                               accesskey="n"
+                               autocapitalize="none"
+                               spellcheck="false"
+                               autocomplete="username" name="username" value=""/><span class="mdc-notched-outline">
+                            <span class="mdc-notched-outline__leading"></span>
+                            <span class="mdc-notched-outline__notch">
+                              <span class="mdc-floating-label">学工号:</span>
+                            </span>
+                            <span class="mdc-notched-outline__trailing"></span>
+                          </span>
+                    </label>
+
+                    <script type="text/javascript">
+                        /*<![CDATA[*/
+                        var username = "";
+                        var disabled = false;
+
+                        if (username != null && username !== '') {
+                            $('#username').val(username);
+                            if (disabled) {
+                                $('#usernameSection').hide();
+                            }
+                        }
+                        /*]]>*/
+                    </script>
+                </div>
+            </section>
+
+            <section class="cas-field my-3 mdc-input-group" id="passwordSection">
+                <div class="mdc-input-group-field mdc-input-group-field-append">
+                    <div class="d-flex caps-check">
+
+                        <label for="password"
+                               class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+
+                            <input class="mdc-text-field__input pwd"
+                                   type="password" id="password" size="25"
+                                   accesskey="p"
+                                   autocomplete="off" name="password" value=""/><span class="mdc-notched-outline">
+                                    <span class="mdc-notched-outline__leading"></span>
+                                    <span class="mdc-notched-outline__notch">
+                                      <span class="mdc-floating-label">密　码:</span>
+                                    </span>
+                                    <span class="mdc-notched-outline__trailing"></span>
+                                </span>
+
+                        </label>
+                    </div>
+
+                    <div class="mdc-text-field-helper-line caps-warn">
+                        <p
+                                class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg text-danger">
+                            <span>CAPSLOCK key is turned on!</span>
+                        </p>
+                    </div>
+                </div>
+                <button class="reveal-password mdc-button mdc-button--raised mdc-input-group-append mdc-icon-button" type="button">
+                    <i class="mdi mdi-eye reveal-password-icon"></i>
+                    <span class="sr-only">Toggle Password</span>
+                </button>
+            </section>
+                    
+                    <section class="cas-field my-3 mdc-input-group">
+                       <div class="mdc-input-group-field mdc-input-group-field-append">
+                        <div class="d-flex">
+                            
+                                <label for="validateCode" class="mdc-text-field mdc-floating-label mdc-text-field--outlined control-label mdc-text-field--with-trailing-icon control-label w-100 ">
+                                    <span class="mdc-notched-outline">
+                                        <span class="mdc-notched-outline__leading"></span>
+                                        <span class="mdc-notched-outline__notch">
+                                        <span class="mdc-floating-label">右侧算式计算结果数字:</span>
+                                        </span>
+                                        <span class="mdc-notched-outline__trailing"></span>
+                                    </span>
+                                    <input class="mdc-text-field__input form-control" type="text" id="validateCode" size="25" name="validateCode" autocomplete="off"
+                                        required /></label>
+                                
+                                <div class="mdc-input-group-append mdc-img align-self-end">
+                                    <img id="captchaImg" src="/cas/captcha" style="cursor:pointer" alt="单击刷新验证码" /></div>
+                            </div>
+                            <div class="mdc-text-field-helper-line">
+                                <div class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true">
+                                    <span>验证码必须输入</span>
+                                </div>
+                            </div>
+                       </div>
+                       
+                    </section>     
+
+                    <section class="cas-field my-3">
+                        </section>
+
+                    <section class="cas-field">
+
+                        <input type="hidden" name="execution" value="a82f7780-dc9e-4638-9b21-065fb2f8d590_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LnlhdUJ5RzhHV3I1Ym9DVnR6RThMNDUtM0t6LWhrUUNHQWNULUE4WUFKZmt3azBOcUNubTh2MlN4N0EwYmExNmtSZmo1VFZUWEVyTi11UHZrbENfZl9Qc25rUGpOd0hxdHVQVEZpWWxmWmJ2b3g4dVFIM3FRZ1p0cDBscDMzSllpazkzREhGVndNSjhMS0RzLUQxbHp2S2FDamlRQkN0RndJVE5teUktZmtacUE2VEdkM0IzZVp3SG84b0VGc2E4Zm1nVHNtVWRCSlZ1c1ZHMEM5UUs0VGxXMUctY2lGR0M2SE92YkM3NkE4MXlicEtCUnlPdXFubTN6STAtZ3Z2c3lldmtwalNycl9aWDdHYmRGbTdUN1E3aE1INUFZS1hKNl9jYWVoLVlEeHBMa2FGdkVRbmhkNS1KaVM0WlZKY3YxOGlnVE5HM2c3YUE0RDRiWHdYRzFXb2cyRXo5SEZNSkV6YTlJaGlxYWp6eEJMUDd0R3lMVVhWN1FEaC16Tk5tOTEyT1VqdjBROEZtbHd3M0p2NUxURVRUcmlqRnpIa0IzNWJnNU1sZ0JWa2xjMWRDa0lBQ1Z2Z3lXYXZoSG1CWnF5MzFwUWVXaGVzQkVJQTNDdkhhX0xITEtIWFJiTmUxZlNXMlZ5NWg2YXBINlVnZmZ6YVNrZUYxTFZiRjMtOGRIcEhQYVR0cFlrNF9DUkw5X1FEOUFWYTZmMkFPOG80QWh6ODJxUE1lbzVjSHJBYUpqbEJUQVFGQXlEN0N0aUNnQ0txVl9uV0RQTDc2YVQyRFJsalBqWC1mMTJHZDc4eURkQm1lZ3dPc21NNXhvRUpjT1JucTNZLXdlSFgtZEhIV2pOSE44TFVpbnZ3VjlYZWVFZnYwaWV0Z0E5X0dyWHp4TDdMVm1GTGg5Y21tcnNUTXpKc0Jic09ISkFhNDc3b2UwQnh4Q1Q0MjQyWjc4UnU0a2FId3F1bG5VTzVXRERJdVkxTVJhbTAyZklNdjZqZE4wVDJZMEZJU2tUbERHU0FCRGZXMnB0d3ltb3hMM1pMMFlmNE1ZNnpCV2VZcUM5eWw1TjNNOG1yZERaMVVmZ1U2VVl5dHRqSGJTcDdaWVdmUmtEbGlVOW02TDEzUHpfR25Qa1hUZGN4NXM3cVJFUFRLSU94LXo2RGtRUnRzYWdMd0J0SU5BUXhmRzBuQU1LWkpOcFU0aGNqaXVHdkJPckg1cWoxZnJfb0xXM2ZwM21ZenVHNXVzSWxQWVFiaGVmbTFNaUVUcGNTNWg5eHJMMWt3LUN3RmNuN3RxMk5fRngzOHlYMVU4Zm5jallVMmY0bEU1N3FobHBTaWlLRzJYNjBIdDM1cGIwUEx4bnpKY3ROc043bkJNRjE0U3RuUEc5N2J1YWdhSkxjZkRzUi1sTmR1QVdNTUxJSnZQTnlEdTk3ZEpVemRYWWJQeTNMYVYwN185X1hqZEMtUmZtNkNTb2R5elJOUGxZY0xLWkZfanlhZmdwUUctdGE5SC1sWlpmdnluY2NEQ243RndnLVYwcUdYQTBmbGtfZUQxNGZOeFlqcEtjdk5hMGZrSTJLZXlaWmlFOUZjQkNYY290WmsxcHo3RHdOWlg3ZHBTRFZYV0Q2dThNY1R6aFZRS0w2bDZ5djdUTXdlZmRHNUpXOXRvNGQ1eXVDa2E5TGVOcEdDVnVwZGJkU2lHWmdiclNnekJFOEk5SS0zeFZCOUFZWWdkNWZVZHlTNGRaeG1xcGwzNHZScjV5eklIYU16N2MtNDZpLVdGZHJHdUZ1SmRmdTA0SjFPc3ZyUXR6UFd3NFdmcnlHeFUzWW1pRVV1alJQaHlVR21rMDVMS0J2VjhseHJ2emxkZmlCMUxObjlTUnh4c2xVWHZBZEd6enN0b2J4N19VaDNLcFRmTGdvN0tzVHZER1hIWWxfRkRyb2gycmYzQ1lnVTF6UUE1d2h2S3RlXzhnNUlsWFFoNFZocVhhcVlWdEc5YllQWmktUHdMVWtCTXNWYkJ6Ui1HZFc0cWprOEVLT0VHWUNISS1HN2lFU292ZmtKS0dZd0tMWkdEYmk5cG1IcHNmYUM4bUFjdVFsODRkcGdhRV8tX29nSUQwRURjbUxwMC1NaDAyT2c3NzlYY3FNZDJQeVVPbWdXQW53cDdzTTJpQmVVM0Q5aVZzUWg5UXk0bkpYTm41WEVMM3g3QXpDajkyd1JjY19yUWMxUm16STFoLTdBc19iX1REQzF2MDliVHRmSnpWUzhVdXRwZnBZelA2M1Z4clZYMGRERk85cFZwZUxlRWdtbm9YUjgtOU00RmhwR3J2WFJkazhSdlNiSHJ1V0xHeGQ1R3R3TjNEUXZ5Qy0zUENOQWRuQ1hPeEozR0tzRHpaeFFpVG9PR1VaM05kcmlNdlNLNjB0ckc2eUUyVG9WdjJCUk16ejIxbG1mVmZfNk9EWGFsWmtiMjkxZlBvVkdJUGZ2OTFQZ0x1VmNrR3dRREtRbG1QSGZwbkNCUUwxSHFEclJGOTlTNGh4NnlwZ01wN2pXNnpvVGlXaG94bHRhNmkyNS0xVmh4R3AtUTF6ZEVwLXIyNUFZcFVOWVU0NVRvWlhwN2xYWUl5U3JzbDc1cE5sckJDMVVPOFlZbHVCd0pZbGEwLV90eGhUY1YzeGhFSEhzTGg0SkxKUTY4TFo0WlFjZW9UamF6SXU3ZlZkMl9XbzRibmFWck9vUjhRWklvbGdfb0stVUJtS19JRERYOTBCVmt3QnFhaDZ6ZXdNZEtxXzNVVGxJMEhmYzNId0lrY3VlUjFaQkhETHRPXzNQdUVhTmJIbnVsTlN1dkdsUk96RU1hR2pnT24taXJ1blZJMDF4Tk5uTGpmWGRiWXp2eXlnZm1sRU5ZZGJMRG5zMEs2bG1TclhtN0dXaHdYWWlfMEFmbXNzQmxZMlpGSzFEc3R0c0JkWjYzSVAzM2JYbnRINGFxYnlVR25kbzRTN3A2WkFncjBTT250MnJMMjZTSUgzR3h0SmNhd0RFTks3Nm5Tb2VtNE54SWNMdHBvN1ZlUnA3bE11RmVxVlRmc0JhQl91UjhKUEVsQnF6MmxtLTJKeVdVLVlXZV9qVmd5b2JKZWJRaHJncG82ZHdNQUVOM19pM0NHc0V5WjA0QzNZVTYySXNXSk1CYjd0azVHamNoZkt6ZWdvSjFFd3pfajNHQzBZdWVtMEVfb2VSWFVlN0x5ZTV1aWNLc2diRUx2RE90a0ZzbzRaMEdLM0k4c3FLVUJTRjFKRnUzclVLamUwVDdDU2dpQ1Q4ZDZYWHlXNWF3UHhwT2lkSGpXQXlPTnlnOGNVNDR3RXJCczQzdFBVNGJmdF9sdkhWYVJBRFMzZjc5bHNrRnNMamRsWTBGanhSN1lsYmZ5UVp4eTVtSUs3aFVvRXNaZUlCbS11MWNHWl80ODJJcG9lZlk0T0FoX2x6dVJBLWh5MGFlRnZjdlJGQ1E2cDAyb3dBRDdORlRoTmJZUE83bEpReFJOakVFQjRpVURhTUJ3cU9pMlBBd0Y2OEJXa2RwcnJHSldmaVVTU1BWSjZmSDVxNUgtalBPRnhTMm5laVgydUxpTlpYbG1uUFJPUXZjYmFpN1pwUTk5MVgwTld0NGlEdWI1SGMzNlM4ajRxNEp2MzFSc1k2QV9Jd3FxaGtxRkRMREhJTzVTVW5CQXk2a0R4ZFlwZHRnSm5Ocjh3UUdyMUtXRndCYnNmSGpLbmIzYzU5LU5MaUFkWjByV3JSNE9LZVRjaXNTNXJqRkxZS1BJN0tXYnJIVVJtYklmSzYwaGd0Y1hjUHRFZWJaSllzckNXRjBXRHNvVVFwRGVvVlJ1cTFOcGxGS19EaWlYc0lJaEFpYzRqV2NMaEFXb3dKT2VlMkRMLWoxeGRiNzBqeVYwcUZyRlRxbFpUMnR1OHVNVFJTeHNoeThpUUdqMjJQeWlQZDhrc2NqNFU4cG5GM1ZieFpnNUxXVS0zZkR3d21HaTlaWUdoemtuUU5OV0h6cTdlUnVvemE4Q0Rvby1wUEtqSkpJSlBGa2lGN3BjSUNmaWVZekltNm1pY1h0WFNnaVJBTV9vUEVXcjlpekZvemlKeklVekV1d3hFSDJIMDd1UEw3bGk0T01HRXpsS04zQndZQUJlVVZTMktOZElwZHNiYkplVWJKX1EzVC1IcDU2WDRLbEpCTGJVOHYteG43em1JRnExaE5qSHpOVW1rS1VsOE5qYUVrazl0SURuQzVqVE9oSEpFejRjU2owRWljUWFwVmNKY2UtOFVjSXRQWVBob2dtV3NjTkFObnc0TERjQ1dsYUJnc2p6OEg2UWs3VjFSengtSEk2aE1KU0N0YURYUmxsVHZwdlZyQWRaZ3Zyb2JpNUFBWVZ2cWY5NUJJT1Y1ZmZ6b1RUOFNGY0FkRDRBczhEUC00RWxVVUlHdHVKT0RZa1VOQU5lZ0tka2x5TllLblNaendlcnRzMUJmTHBjanoyRE04WDJwajNpZEVIRE5qaERiZVdQbk9BT1JDeXBYRU16ZjAyV3F0cWQxZWZNaFdFbHlfX0VnUUxmY2FINW5WNHA4bTNCWXFYYnVWSjh1TXk3YVd4bm1wcWstdU1JdVY3dWJzZWJuZW9LVmszaW9iVEpaMTliNWwyZEFfNmdPMnNmWkhYdkFIRkdOUzhvX0JSSjZiYzZFQUNNOXFjRVFXa2tVc19zSnAydnhDeUdEYUxIdFp4LUdoQ3d6WEFheEtONUI2X3NlVC1DRW9XS0FIYTJ6aXVhSVZSNFM2TGJ2LXItd3VLeW4xLVBFSmxOZkJoZXg3VG55YmE5aXhBcEtSMG5uZ251SmRBTXM2MldyYm02YmtQcmlHMUFBTkppQ2xyT0VWN1NhY2xlU01xWS02TnFxZmdudXRHdlFZVkZFXzktVVJILWpka2JORU9aMEl3Uk9qZUF6VkZycDRSNVZudEVZb0xfVHI5TDlRM1BDemRJRFMtQVhMUVRLUnFDNnhfVTg1MmFlLWMxUWd5TkhQamxMR29NbmhXaHFqMnpjN0l0UklPdjZVVS0xTEtfeTh4T29JN2F1Q1RyUTFpN2NaLTdXd1NqMi05ZU1tZzBndmlaWjVRbmdxMFZaeE1qalI3bVg4RDVVOW52NG0zZ2RUU2Z2SnZrNEtVdnRCWUFEYmFYQXR0YVRvRmNWc0xWUnZXYUN6S2IzcFBNX2lwc0ZrVWRUaXR6dFhXN2h2YUZCa3l1Q1BwVmJCam5lNHJEY2pxcWVfbUlvdl92ektTQkRTeWMzYnpoeTdzVjA5cEpmZzBLRjVVV2lsakRodU9iYUI0SHpLeUZ3eDQxTmpaN3hqN3dWWG5ja19BYzRTNXVyWHVXMEN0TzJQdkJCbmxMTkJpYzRGWFcxYmVka1pWRUhNWTZxSXpOVXo2OEVmVE9Kd0RpOFQyOVZWR210TG53blB3d1pZZGlMMVEyLVhBbEZsSHkxM19PWjdqWjIxdWZEb2w2Rld2SDJvcWRnS0pEaTdlWTZMWHptbE1ielhEcG5BT2oxSi0zbnIwLS1EN2dxdy40dmkzVHZCX0E3UG9TSXRkOEhvZjdZanNpVldyVWpkYXZBMmlQM3dtWXo2NWpCLU44bWxFS2hZTjFJSTFqdWZrWEZ3S3NoQ1R6T09TcXV5c1FQTGhHUQ=="/><input type="hidden" name="_eventId" value="submit"/><input type="hidden" name="geolocation"/></section>
+
+                    <div>
+
+        <button
+                class="mdc-button mdc-button--raised"
+                name="submit"
+                accesskey="l"
+                type="submit">
+            <span class="mdc-button__label">登录</span>
+        </button>
+
+        </div>
+                </span>
+            </form>
+
+            <hr class="my-4"/><span>
+                <div id="pmlinks" class="my-2 d-flex">
+        <div class="w-100">
+        <a href="https://idpass.shmtu.edu.cn/pwd/forgetpwd" >重设密码</a>
+        <form method="post" id="passwordlessLoginForm">
+          <input type="hidden" name="execution" value="a82f7780-dc9e-4638-9b21-065fb2f8d590_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LnlhdUJ5RzhHV3I1Ym9DVnR6RThMNDUtM0t6LWhrUUNHQWNULUE4WUFKZmt3azBOcUNubTh2MlN4N0EwYmExNmtSZmo1VFZUWEVyTi11UHZrbENfZl9Qc25rUGpOd0hxdHVQVEZpWWxmWmJ2b3g4dVFIM3FRZ1p0cDBscDMzSllpazkzREhGVndNSjhMS0RzLUQxbHp2S2FDamlRQkN0RndJVE5teUktZmtacUE2VEdkM0IzZVp3SG84b0VGc2E4Zm1nVHNtVWRCSlZ1c1ZHMEM5UUs0VGxXMUctY2lGR0M2SE92YkM3NkE4MXlicEtCUnlPdXFubTN6STAtZ3Z2c3lldmtwalNycl9aWDdHYmRGbTdUN1E3aE1INUFZS1hKNl9jYWVoLVlEeHBMa2FGdkVRbmhkNS1KaVM0WlZKY3YxOGlnVE5HM2c3YUE0RDRiWHdYRzFXb2cyRXo5SEZNSkV6YTlJaGlxYWp6eEJMUDd0R3lMVVhWN1FEaC16Tk5tOTEyT1VqdjBROEZtbHd3M0p2NUxURVRUcmlqRnpIa0IzNWJnNU1sZ0JWa2xjMWRDa0lBQ1Z2Z3lXYXZoSG1CWnF5MzFwUWVXaGVzQkVJQTNDdkhhX0xITEtIWFJiTmUxZlNXMlZ5NWg2YXBINlVnZmZ6YVNrZUYxTFZiRjMtOGRIcEhQYVR0cFlrNF9DUkw5X1FEOUFWYTZmMkFPOG80QWh6ODJxUE1lbzVjSHJBYUpqbEJUQVFGQXlEN0N0aUNnQ0txVl9uV0RQTDc2YVQyRFJsalBqWC1mMTJHZDc4eURkQm1lZ3dPc21NNXhvRUpjT1JucTNZLXdlSFgtZEhIV2pOSE44TFVpbnZ3VjlYZWVFZnYwaWV0Z0E5X0dyWHp4TDdMVm1GTGg5Y21tcnNUTXpKc0Jic09ISkFhNDc3b2UwQnh4Q1Q0MjQyWjc4UnU0a2FId3F1bG5VTzVXRERJdVkxTVJhbTAyZklNdjZqZE4wVDJZMEZJU2tUbERHU0FCRGZXMnB0d3ltb3hMM1pMMFlmNE1ZNnpCV2VZcUM5eWw1TjNNOG1yZERaMVVmZ1U2VVl5dHRqSGJTcDdaWVdmUmtEbGlVOW02TDEzUHpfR25Qa1hUZGN4NXM3cVJFUFRLSU94LXo2RGtRUnRzYWdMd0J0SU5BUXhmRzBuQU1LWkpOcFU0aGNqaXVHdkJPckg1cWoxZnJfb0xXM2ZwM21ZenVHNXVzSWxQWVFiaGVmbTFNaUVUcGNTNWg5eHJMMWt3LUN3RmNuN3RxMk5fRngzOHlYMVU4Zm5jallVMmY0bEU1N3FobHBTaWlLRzJYNjBIdDM1cGIwUEx4bnpKY3ROc043bkJNRjE0U3RuUEc5N2J1YWdhSkxjZkRzUi1sTmR1QVdNTUxJSnZQTnlEdTk3ZEpVemRYWWJQeTNMYVYwN185X1hqZEMtUmZtNkNTb2R5elJOUGxZY0xLWkZfanlhZmdwUUctdGE5SC1sWlpmdnluY2NEQ243RndnLVYwcUdYQTBmbGtfZUQxNGZOeFlqcEtjdk5hMGZrSTJLZXlaWmlFOUZjQkNYY290WmsxcHo3RHdOWlg3ZHBTRFZYV0Q2dThNY1R6aFZRS0w2bDZ5djdUTXdlZmRHNUpXOXRvNGQ1eXVDa2E5TGVOcEdDVnVwZGJkU2lHWmdiclNnekJFOEk5SS0zeFZCOUFZWWdkNWZVZHlTNGRaeG1xcGwzNHZScjV5eklIYU16N2MtNDZpLVdGZHJHdUZ1SmRmdTA0SjFPc3ZyUXR6UFd3NFdmcnlHeFUzWW1pRVV1alJQaHlVR21rMDVMS0J2VjhseHJ2emxkZmlCMUxObjlTUnh4c2xVWHZBZEd6enN0b2J4N19VaDNLcFRmTGdvN0tzVHZER1hIWWxfRkRyb2gycmYzQ1lnVTF6UUE1d2h2S3RlXzhnNUlsWFFoNFZocVhhcVlWdEc5YllQWmktUHdMVWtCTXNWYkJ6Ui1HZFc0cWprOEVLT0VHWUNISS1HN2lFU292ZmtKS0dZd0tMWkdEYmk5cG1IcHNmYUM4bUFjdVFsODRkcGdhRV8tX29nSUQwRURjbUxwMC1NaDAyT2c3NzlYY3FNZDJQeVVPbWdXQW53cDdzTTJpQmVVM0Q5aVZzUWg5UXk0bkpYTm41WEVMM3g3QXpDajkyd1JjY19yUWMxUm16STFoLTdBc19iX1REQzF2MDliVHRmSnpWUzhVdXRwZnBZelA2M1Z4clZYMGRERk85cFZwZUxlRWdtbm9YUjgtOU00RmhwR3J2WFJkazhSdlNiSHJ1V0xHeGQ1R3R3TjNEUXZ5Qy0zUENOQWRuQ1hPeEozR0tzRHpaeFFpVG9PR1VaM05kcmlNdlNLNjB0ckc2eUUyVG9WdjJCUk16ejIxbG1mVmZfNk9EWGFsWmtiMjkxZlBvVkdJUGZ2OTFQZ0x1VmNrR3dRREtRbG1QSGZwbkNCUUwxSHFEclJGOTlTNGh4NnlwZ01wN2pXNnpvVGlXaG94bHRhNmkyNS0xVmh4R3AtUTF6ZEVwLXIyNUFZcFVOWVU0NVRvWlhwN2xYWUl5U3JzbDc1cE5sckJDMVVPOFlZbHVCd0pZbGEwLV90eGhUY1YzeGhFSEhzTGg0SkxKUTY4TFo0WlFjZW9UamF6SXU3ZlZkMl9XbzRibmFWck9vUjhRWklvbGdfb0stVUJtS19JRERYOTBCVmt3QnFhaDZ6ZXdNZEtxXzNVVGxJMEhmYzNId0lrY3VlUjFaQkhETHRPXzNQdUVhTmJIbnVsTlN1dkdsUk96RU1hR2pnT24taXJ1blZJMDF4Tk5uTGpmWGRiWXp2eXlnZm1sRU5ZZGJMRG5zMEs2bG1TclhtN0dXaHdYWWlfMEFmbXNzQmxZMlpGSzFEc3R0c0JkWjYzSVAzM2JYbnRINGFxYnlVR25kbzRTN3A2WkFncjBTT250MnJMMjZTSUgzR3h0SmNhd0RFTks3Nm5Tb2VtNE54SWNMdHBvN1ZlUnA3bE11RmVxVlRmc0JhQl91UjhKUEVsQnF6MmxtLTJKeVdVLVlXZV9qVmd5b2JKZWJRaHJncG82ZHdNQUVOM19pM0NHc0V5WjA0QzNZVTYySXNXSk1CYjd0azVHamNoZkt6ZWdvSjFFd3pfajNHQzBZdWVtMEVfb2VSWFVlN0x5ZTV1aWNLc2diRUx2RE90a0ZzbzRaMEdLM0k4c3FLVUJTRjFKRnUzclVLamUwVDdDU2dpQ1Q4ZDZYWHlXNWF3UHhwT2lkSGpXQXlPTnlnOGNVNDR3RXJCczQzdFBVNGJmdF9sdkhWYVJBRFMzZjc5bHNrRnNMamRsWTBGanhSN1lsYmZ5UVp4eTVtSUs3aFVvRXNaZUlCbS11MWNHWl80ODJJcG9lZlk0T0FoX2x6dVJBLWh5MGFlRnZjdlJGQ1E2cDAyb3dBRDdORlRoTmJZUE83bEpReFJOakVFQjRpVURhTUJ3cU9pMlBBd0Y2OEJXa2RwcnJHSldmaVVTU1BWSjZmSDVxNUgtalBPRnhTMm5laVgydUxpTlpYbG1uUFJPUXZjYmFpN1pwUTk5MVgwTld0NGlEdWI1SGMzNlM4ajRxNEp2MzFSc1k2QV9Jd3FxaGtxRkRMREhJTzVTVW5CQXk2a0R4ZFlwZHRnSm5Ocjh3UUdyMUtXRndCYnNmSGpLbmIzYzU5LU5MaUFkWjByV3JSNE9LZVRjaXNTNXJqRkxZS1BJN0tXYnJIVVJtYklmSzYwaGd0Y1hjUHRFZWJaSllzckNXRjBXRHNvVVFwRGVvVlJ1cTFOcGxGS19EaWlYc0lJaEFpYzRqV2NMaEFXb3dKT2VlMkRMLWoxeGRiNzBqeVYwcUZyRlRxbFpUMnR1OHVNVFJTeHNoeThpUUdqMjJQeWlQZDhrc2NqNFU4cG5GM1ZieFpnNUxXVS0zZkR3d21HaTlaWUdoemtuUU5OV0h6cTdlUnVvemE4Q0Rvby1wUEtqSkpJSlBGa2lGN3BjSUNmaWVZekltNm1pY1h0WFNnaVJBTV9vUEVXcjlpekZvemlKeklVekV1d3hFSDJIMDd1UEw3bGk0T01HRXpsS04zQndZQUJlVVZTMktOZElwZHNiYkplVWJKX1EzVC1IcDU2WDRLbEpCTGJVOHYteG43em1JRnExaE5qSHpOVW1rS1VsOE5qYUVrazl0SURuQzVqVE9oSEpFejRjU2owRWljUWFwVmNKY2UtOFVjSXRQWVBob2dtV3NjTkFObnc0TERjQ1dsYUJnc2p6OEg2UWs3VjFSengtSEk2aE1KU0N0YURYUmxsVHZwdlZyQWRaZ3Zyb2JpNUFBWVZ2cWY5NUJJT1Y1ZmZ6b1RUOFNGY0FkRDRBczhEUC00RWxVVUlHdHVKT0RZa1VOQU5lZ0tka2x5TllLblNaendlcnRzMUJmTHBjanoyRE04WDJwajNpZEVIRE5qaERiZVdQbk9BT1JDeXBYRU16ZjAyV3F0cWQxZWZNaFdFbHlfX0VnUUxmY2FINW5WNHA4bTNCWXFYYnVWSjh1TXk3YVd4bm1wcWstdU1JdVY3dWJzZWJuZW9LVmszaW9iVEpaMTliNWwyZEFfNmdPMnNmWkhYdkFIRkdOUzhvX0JSSjZiYzZFQUNNOXFjRVFXa2tVc19zSnAydnhDeUdEYUxIdFp4LUdoQ3d6WEFheEtONUI2X3NlVC1DRW9XS0FIYTJ6aXVhSVZSNFM2TGJ2LXItd3VLeW4xLVBFSmxOZkJoZXg3VG55YmE5aXhBcEtSMG5uZ251SmRBTXM2MldyYm02YmtQcmlHMUFBTkppQ2xyT0VWN1NhY2xlU01xWS02TnFxZmdudXRHdlFZVkZFXzktVVJILWpka2JORU9aMEl3Uk9qZUF6VkZycDRSNVZudEVZb0xfVHI5TDlRM1BDemRJRFMtQVhMUVRLUnFDNnhfVTg1MmFlLWMxUWd5TkhQamxMR29NbmhXaHFqMnpjN0l0UklPdjZVVS0xTEtfeTh4T29JN2F1Q1RyUTFpN2NaLTdXd1NqMi05ZU1tZzBndmlaWjVRbmdxMFZaeE1qalI3bVg4RDVVOW52NG0zZ2RUU2Z2SnZrNEtVdnRCWUFEYmFYQXR0YVRvRmNWc0xWUnZXYUN6S2IzcFBNX2lwc0ZrVWRUaXR6dFhXN2h2YUZCa3l1Q1BwVmJCam5lNHJEY2pxcWVfbUlvdl92ektTQkRTeWMzYnpoeTdzVjA5cEpmZzBLRjVVV2lsakRodU9iYUI0SHpLeUZ3eDQxTmpaN3hqN3dWWG5ja19BYzRTNXVyWHVXMEN0TzJQdkJCbmxMTkJpYzRGWFcxYmVka1pWRUhNWTZxSXpOVXo2OEVmVE9Kd0RpOFQyOVZWR210TG53blB3d1pZZGlMMVEyLVhBbEZsSHkxM19PWjdqWjIxdWZEb2w2Rld2SDJvcWRnS0pEaTdlWTZMWHptbE1ielhEcG5BT2oxSi0zbnIwLS1EN2dxdy40dmkzVHZCX0E3UG9TSXRkOEhvZjdZanNpVldyVWpkYXZBMmlQM3dtWXo2NWpCLU44bWxFS2hZTjFJSTFqdWZrWEZ3S3NoQ1R6T09TcXV5c1FQTGhHUQ==" /><input type="hidden" name="_eventId" value="passwordlessLogin" /></form>
+        </div>
+        <span style="color:red;width:10em">严禁传输涉密信息</span>
+        </div>
+            </span>
+
+            <script type="text/javascript">
+                /*<![CDATA[*/
+                var i = "One moment please..."
+                var j = "\u767B\u5F55"
+                    /*]]>*/
+                    $(window).on('pageshow', function () {
+                        $(':submit').prop('disabled', false);
+                        $(':submit').attr('value', j);
+                    });
+                    
+                    function refreshCaptcha() {
+                      var id = Date.now();
+                      var url = "/cas/captcha?" + id;
+                      console.log(url);
+                      $("#captchaImg").attr("src", url);
+                    }
+                    
+                $(document).ready(function () {
+                    $("#fm1").submit(function () {
+                        $(":submit").attr("disabled", true);
+                        $(":submit").attr("value", i);
+                        return true;
+                    });
+                    
+                    
+                    $("#captchaImg").click(refreshCaptcha);
+                });
+            </script>
+        </div>
+
+        <span>
+            <div id="sidebar">
+            <div class="sidebar-content">
+                <p>出于安全考虑，一旦您访问过那些需要您提供凭证信息的应用时，请操作完成之后<a href="logout">退出</a>并关闭浏览器。</p>
+            </div>
+        </div>
+        </span>
+
+    </div>
+        </section>
+        </div>
+</div>
+    </main>
+</div>
+
+<footer class="py-4 d-flex justify-content-center cas-footer">
+   <div>
+    <div>你可以访问：
+     <a href="https://www.shmtu.edu.cn">学校主页</a> |
+     <a href="https://portal.shmtu.edu.cn">数字平台</a> |
+     <a href="http://wf.shmtu.edu.cn">网上办事中心</a> 
+    </div>
+    <div>
+       <span id="copyright" class="mr-2 d-inline-block">版权所有 &copy; 上海海事大学 技术支持：信息办，电话：4499<br />本系统仅对Internet Explorer 11以上、Chrome浏览器提供技术支持</span>
+       <!--<span class="mr-2 d-inline-block" >Powered by <a href="https://github.com/apereo/cas">Apereo CAS</a></span> --></div>
+  </div>
+</footer>
+
+</body>
 </html>
