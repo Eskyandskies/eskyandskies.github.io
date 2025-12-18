@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -6,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海事资讯导航 - 上海海事大学</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://www.shmtu.edu.cn/_upload/tpl/01/9f/415/template415/images/favicon.ico" type="image/x-icon"/>
     <style>
+
+        /*JS控制加入expanded状态mouseenter → setTimeout → expandCards()
+        CSS的transition : all ease 0.3s */
+
         * {
             margin: 0;
             padding: 0;
@@ -15,21 +19,21 @@
         }
         
         :root {
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --accent: #ffa500;
-            --light-bg: #f0f2f5;
-            --light-card: rgba(255, 255, 255, 0.9);
-            --dark-text: #333;
-            --light-text: #666;
+            --primary: #6a11cb; /*主色：标题、图标*/
+            --secondary: #2575fc;/*辅助主色：渐变、按钮*/
+            --accent: #ffa500;/*强调色：进度条*/
+            --light-bg: #f0f2f5;  /*页面整体背景色（浅灰）*/
+            --light-card: rgba(255, 255, 255, 0.9);/*卡片背景色（半透明白，用于玻璃效果）*/
+            --dark-text: #333; /*深色文本：标题、正文主文字*/
+            --light-text: #666; /*浅色文本：说明文字、次要信息*/
         }
         
         body {
-            background: var(--light-bg);
-            color: var(--dark-text);
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow: hidden;
+            background: var(--light-bg);/*使用主题变量作为整体背景色*/
+            color: var(--dark-text); /*默认文字颜色（深色，保证可读性）*/
+            line-height: 1.6; /*全局行高*/
+            min-height: 100vh;/*页面最小高度为视口高度，防止内容过少时塌陷*/
+            overflow: hidden;  /* 隐藏页面滚动条*/
         }
         
         /* 初始大logo */
@@ -49,14 +53,13 @@
         .initial-logo .logo {
             width: 200px;
             height: 200px;
-            background: linear-gradient(135deg, #2575fc, #2575fc); 
+            background: linear-gradient(135deg, #2575fc, #d4dbe7); 
             border-radius: 20px;
             margin-bottom: 20px;
             filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-size: 3rem;
         }
         
@@ -70,6 +73,7 @@
             top: 20px;
             left: 20px;
             transform: translate(0, 0);
+            /* background-color: var(--light-bg); */
         }
         
         .initial-logo.small .logo {
@@ -267,7 +271,7 @@
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
         
         .page-title {
@@ -392,17 +396,6 @@
             color: var(--dark-text);
         }
         
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin-top: 30px;
-            color: var(--accent);
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
         /* 进度条 */
         .progress-container {
             position: fixed;
@@ -475,37 +468,7 @@
             background: rgba(255, 255, 255, 0.9);
             transform: translateY(-2px);
         }
-        
-        /* 源代码展示页面 */
-        .source-code {
-            background: rgba(0, 0, 0, 0.05);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            overflow-x: auto;
-            max-height: 500px;
-            overflow-y: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        
-        .source-code::-webkit-scrollbar {
-            display: none;
-        }
-        
-        /* 动画定义 */
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-        
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .card-stack.expanded {
@@ -541,33 +504,12 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* 收回提示 */
-        .collapse-hint {
-            position: fixed;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .collapse-hint.show {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
     <!-- 初始大logo -->
     <div class="initial-logo">
-        <div class="logo"><img src="https://www.shmtu.edu.cn/_upload/article/images/5a/bd/c76c6b8a4d189383fb23c34293d8/741d99fd-0a2e-4a8b-9e95-421d50ca2890.png"></img></div>
+        <div class="logo"><img src="https://www.shmtu.edu.cn/_upload/tpl/01/9f/415/template415/images/favicon.ico" width="100px" height="100px"></img></div>
         <div class="logo-text">上海海事大学</div>
     </div>
     
@@ -764,7 +706,7 @@
             </div>
         </div>
         
-        <!-- 页面4: 致谢与源代码 -->
+        <!-- 页面4: 致谢 -->
         <div class="page" id="page4">
             <div class="page-content">
                 <h1 class="page-title">致谢</h1>
@@ -776,8 +718,6 @@
                     <p>感谢港口工作者，是你们日夜坚守，让巨轮安全停靠，让货物高效流转。</p>
                     <p>感谢造船工程师，是你们的智慧与匠心，打造出一艘艘劈波斩浪的钢铁巨兽。</p>
                     <p>感谢海事教育者，是你们的辛勤耕耘，培养出一代代航海英才。</p>
-                    <p class="floating">🌊 🚢 ⚓ 🌅</p>
-                    <div class="signature">向海洋致敬</div>
                 </div>
             </div>
         </div>
@@ -786,11 +726,9 @@
     <!-- 返回按钮 -->
     <div class="back-button" style="display: none;">
         <i class="fas fa-arrow-left"></i>
+        <!-- 用Font Awesome的左箭头 -->
         <span>返回卡片</span>
     </div>
-    
-    <!-- 收回提示 -->
-    
     
     <!-- 进度条 -->
     <div class="progress-container">
@@ -829,7 +767,7 @@
                     clearTimeout(collapseTimeout);
                     expandTimeout = setTimeout(() => {
                         expandCards();
-                    }, 100);
+                    }, 180);
                 }
             });
             
@@ -895,7 +833,7 @@
             switchPage(0);
             collapseCards();
         });
-        
+
         // 页面切换函数
         function switchPage(pageIndex) {
             currentPage = pageIndex;
