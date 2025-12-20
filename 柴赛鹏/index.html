@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海事科普 - 探索蓝色海洋</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 60, 120, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* 页面内容样式 */
+        .page {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a2980;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #26d0ce, #1a2980);
+            border-radius: 2px;
+        }
+        
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 80, 150, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .content-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .content-box h2 {
+            color: #1a2980;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content-box h2 i {
+            margin-right: 10px;
+            color: #26d0ce;
+        }
+        
+        .content-box p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .img-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .img-container img:hover {
+            transform: scale(1.03);
+        }
+        
+        .fact-box {
+            background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+            border-left: 5px solid #26d0ce;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .fact-box h3 {
+            color: #1a2980;
+            margin-bottom: 10px;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 5%;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-box {
+                padding: 20px;
+            }
+        }
+        
+        /* 海洋装饰元素 */
+        .wave-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%231a2980"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%231a2980"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a2980"/></svg>');
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home'); return false;">
+                <i class="fas fa-anchor"></i>
+                海事科普
+            </a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active" onclick="showPage('home'); return false;"><i class="fas fa-water"></i> 海洋资源</a></li>
+                <li><a href="#" onclick="showPage('crew'); return false;"><i class="fas fa-user-tie"></i> 船员</a></li>
+                <li><a href="#" onclick="showPage('law'); return false;"><i class="fas fa-gavel"></i> 海商法</a></li>
+                <li><a href="#" onclick="showPage('commercial'); return false;"><i class="fas fa-ship"></i> 商用船</a></li>
+                <li><a href="#" onclick="showPage('military'); return false;"><i class="fas fa-fighter-jet"></i> 军用船</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 海洋资源页面 -->
+    <div id="home" class="page active">
+        <div class="page-header">
+            <h1><i class="fas fa-water"></i> 我国的海洋资源</h1>
+            <p>探索中国广阔海域中蕴藏的丰富自然资源与生态宝藏</p>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-fish"></i> 海洋生物资源</h2>
+            <p>我国海域跨越温带、亚热带和热带，拥有丰富的海洋生物资源。已记录的海洋生物超过2万种，其中鱼类3000多种，具有经济价值的约300种。</p>
+            <p>黄海、渤海、东海和南海四大海区各有特色：黄渤海以冷水性鱼类为主；东海南海则以暖水性鱼类为多。我国还是世界上最大的海藻养殖国。</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="丰富的海洋生物">
+            </div>
+            
+            <div class="fact-box">
+                <h3>你知道吗？</h3>
+                <p>我国大陆海岸线长达1.8万公里，主张管辖海域面积约300万平方公里，海洋资源潜力巨大。南海更是被称为"第二个波斯湾"，石油地质储量约230-300亿吨。</p>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-gem"></i> 海洋矿产资源</h2>
+            <p>我国海洋矿产资源丰富，主要包括石油、天然气、滨海砂矿、天然气水合物等。南海、东海、渤海都发现了大型油气田。</p>
+            <p>海底多金属结核、富钴结壳等深海矿产资源潜力巨大。我国是国际海底区域多金属结核勘探的"先驱投资者"，拥有7.5万平方公里具有专属勘探权的矿区。</p>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-wind"></i> 海洋可再生能源</h2>
+            <p>我国海洋可再生能源丰富，包括潮汐能、波浪能、海流能、温差能和盐差能等。理论蕴藏量超过15亿千瓦，技术可开发量约6-7亿千瓦。</p>
+            <p>其中潮汐能资源最为丰富，主要集中在浙江、福建沿海，占全国潮汐能资源的90%以上。江厦潮汐试验电站是我国最大的潮汐电站。</p>
+        </div>
+    </div>
+    
+    <!-- 船员页面 -->
+    <div id="crew" class="page">
+        <div class="page-header">
+            <h1><i class="fas fa-user-tie"></i> 船员</h1>
+            <p>了解海上工作者——船员的职业生活、职责与挑战</p>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-user-friends"></i> 船员职业分类</h2>
+            <p>船员按职务可分为船长、高级船员（大副、二副、三副、轮机长、大管轮等）和普通船员（水手、机工、厨师等）。</p>
+            <p>按航行区域可分为远洋船员、近海船员和内河船员；按船舶类型可分为货船船员、油船船员、客船船员和特种船船员等。</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1551524165-6b6e5a6166f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="船员工作场景">
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-graduation-cap"></i> 船员培训与证书</h2>
+            <p>船员必须接受专业培训并取得相应资格证书。我国船员培训体系包括航海院校学历教育、船员培训中心职业培训等。</p>
+            <p>主要证书包括：基本安全培训证书、专业培训合格证书、适任证书等。STCW公约（海员培训、发证和值班标准国际公约）是国际通用的船员标准。</p>
+            
+            <div class="fact-box">
+                <h3>你知道吗？</h3>
+                <p>我国是船员大国，拥有注册船员约180万人，其中海船船员80万人，内河船员100万人。我国船员以其专业素质在国际航运市场享有良好声誉。</p>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-life-ring"></i> 船员生活与挑战</h2>
+            <p>船员生活有其特殊性：长期在海上工作，远离家人；工作环境相对封闭；面临各种海上风险（恶劣天气、海盗等）。</p>
+            <p>现代船舶条件已大大改善，配备有卫星通信、娱乐设施等。船员心理健康日益受到重视，船舶公司会提供心理支持服务。</p>
+        </div>
+    </div>
+    
+    <!-- 海商法页面 -->
+    <div id="law" class="page">
+        <div class="page-header">
+            <h1><i class="fas fa-gavel"></i> 海商法</h1>
+            <p>了解调整海上运输关系和船舶关系的法律规范</p>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-balance-scale"></i> 海商法概述</h2>
+            <p>海商法是调整海上运输关系、船舶关系的法律规范的总称。我国《海商法》于1993年7月1日起施行，共15章278条。</p>
+            <p>主要内容包括：船舶物权、船员、海上货物运输合同、海上旅客运输合同、船舶租用合同、海上拖航合同、船舶碰撞、海难救助、共同海损、海事赔偿责任限制、海上保险合同等。</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="海商法象征">
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-file-contract"></i> 重要国际公约</h2>
+            <p>海商法具有明显的国际性，我国加入的重要国际公约包括：《国际海上人命安全公约》(SOLAS)、《防止船舶污染海洋公约》(MARPOL)、《海员培训、发证和值班标准国际公约》(STCW)等。</p>
+            <p>在海上货物运输方面，有《海牙规则》、《维斯比规则》和《汉堡规则》，我国《海商法》第四章主要参考了这些国际规则。</p>
+            
+            <div class="fact-box">
+                <h3>你知道吗？</h3>
+                <p>共同海损制度是海商法中特有的制度，指在同一海上航程中，船舶、货物和其他财产遭遇共同危险，为了共同安全，有意地合理地采取措施所直接造成的特殊牺牲、支付的特殊费用。</p>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-handshake"></i> 海事争议解决</h2>
+            <p>海事争议解决途径包括：协商、调解、仲裁和诉讼。我国设立了10家海事法院，专门审理海事海商案件。</p>
+            <p>海事仲裁也是解决海事争议的重要方式，中国海事仲裁委员会是我国主要的海事仲裁机构，在国际上享有良好声誉。</p>
+        </div>
+    </div>
+    
+    <!-- 商用船页面 -->
+    <div id="commercial" class="page">
+        <div class="page-header">
+            <h1><i class="fas fa-ship"></i> 商用船</h1>
+            <p>探索各种商业船舶的类型、特点与作用</p>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-boxes"></i> 货船类型</h2>
+            <p>商用船主要分为货船和客船两大类。货船根据货物类型可分为：集装箱船、散货船、油船、液化气船、滚装船、多用途船等。</p>
+            <p>集装箱船是当今海上运输的主力，最大集装箱船的载箱量已超过2.4万TEU（标准箱）。散货船运输煤炭、矿石、谷物等干散货物，按载重吨可分为好望角型、巴拿马型等。</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1564507004663-b6dfb3e2ede7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="大型集装箱船">
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-gas-pump"></i> 油船与液化气船</h2>
+            <p>油船专门运输原油或成品油，按载重吨可分为VLCC（超大型油轮）和ULCC（巨型油轮）。现代油船采用双层船壳设计，提高安全性。</p>
+            <p>液化气船运输液化天然气(LNG)或液化石油气(LPG)。LNG船被称为"海上超级冷冻车"，运输温度低至-163℃。我国已能自主建造大型LNG船。</p>
+            
+            <div class="fact-box">
+                <h3>你知道吗？</h3>
+                <p>全球贸易的90%通过海运完成，商用船是世界经济的命脉。我国是世界第一造船大国，2022年造船完工量、新接订单量、手持订单量三大指标均居世界第一。</p>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-users"></i> 客船与邮轮</h2>
+            <p>客船包括渡轮、沿海客船和国际邮轮等。邮轮旅游已成为重要的休闲方式，现代邮轮如同"海上移动度假村"。</p>
+            <p>我国邮轮产业快速发展，上海、天津、厦门等地已建成专业邮轮母港。国产大型邮轮也已开始建造，标志着我国造船工业的新突破。</p>
+        </div>
+    </div>
+    
+    <!-- 军用船页面 -->
+    <div id="military" class="page">
+        <div class="page-header">
+            <h1><i class="fas fa-fighter-jet"></i> 军用船</h1>
+            <p>了解各国海军的主要舰艇类型与功能</p>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-ship"></i> 水面作战舰艇</h2>
+            <p>军用船主要包括水面舰艇和潜艇。水面作战舰艇有：航空母舰、驱逐舰、护卫舰、巡洋舰（已逐渐淘汰）、两栖攻击舰等。</p>
+            <p>航空母舰是海上力量的核心，我国已进入"三航母时代"。驱逐舰是海军主力，现代驱逐舰配备相控阵雷达、垂直发射系统等先进装备。</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="海军舰艇">
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-subway"></i> 潜艇与辅助舰船</h2>
+            <p>潜艇分为攻击型潜艇和弹道导弹潜艇。攻击型潜艇用于反舰、反潜；弹道导弹潜艇是战略核力量的重要组成部分，具有隐蔽性强、生存能力高的特点。</p>
+            <p>辅助舰船包括补给舰、医院船、训练舰等。我国"和平方舟"号医院船是专门的海上医疗救护平台，已多次执行海外医疗任务。</p>
+            
+            <div class="fact-box">
+                <h3>你知道吗？</h3>
+                <p>我国海军成立于1949年4月23日，经过70多年发展，已建设成为一支多兵种合成、具有核常兼备作战能力的现代化海上武装力量。海军舰艇命名有严格规则，如航母以省命名，驱逐舰以大城市命名等。</p>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2><i class="fas fa-shield-alt"></i> 海军发展与趋势</h2>
+            <p>现代海军发展呈现以下趋势：舰艇隐身化、信息化、多功能化；武器精确化、远程化；无人装备广泛应用。</p>
+            <p>我国海军正加快转型建设，聚焦远海防卫、海上维权等任务，为维护国家主权、安全和发展利益提供坚强保障。</p>
+        </div>
+    </div>
+  
+    
+    <!-- 海洋装饰 -->
+    <div class="wave-decoration"></div>
+    
+    <script>
+        // 显示指定页面，隐藏其他页面
+        function showPage(pageId) {
+            // 隐藏所有页面
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 显示目标页面
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                
+                // 更新导航栏活动状态
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // 根据页面ID找到对应导航链接
+                let targetLink;
+                switch(pageId) {
+                    case 'home': targetLink = navLinks[0]; break;
+                    case 'crew': targetLink = navLinks[1]; break;
+                    case 'law': targetLink = navLinks[2]; break;
+                    case 'commercial': targetLink = navLinks[3]; break;
+                    case 'military': targetLink = navLinks[4]; break;
+                    default: targetLink = navLinks[0];
+                }
+                
+                if (targetLink) targetLink.classList.add('active');
+                
+                // 滚动到页面顶部
+                window.scrollTo(0, 0);
+            }
+            
+            // 在移动设备上关闭菜单
+            const navLinksContainer = document.getElementById('navLinks');
+            navLinksContainer.classList.remove('active');
+        }
+        
+        // 移动端菜单切换
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+        
+        // 页面加载时默认显示海洋资源页面
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>

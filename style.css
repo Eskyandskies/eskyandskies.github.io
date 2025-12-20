@@ -1,0 +1,277 @@
+:root{
+    --bg-main:#0f1220;
+    --bg-glass:rgba(20,24,45,.65);
+    --accent:#ff8fa3;
+    --accent-soft:#ffd1dc;
+    --text-main:#f4f6fb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI","Microsoft YaHei",sans-serif;
+}
+
+body{
+    background:
+        radial-gradient(circle at 30% 20%,rgba(255,140,160,.15),transparent 40%),
+        radial-gradient(circle at 70% 80%,rgba(120,140,255,.15),transparent 40%),
+        var(--bg-main);
+    color:var(--text-main);
+    height:100vh;
+    overflow:hidden;
+}
+
+/* ===== 开始界面 ===== */
+#start-screen{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    background:rgba(10,12,25,.9);
+    transition:.6s;
+    z-index: 10; /* 添加z-index确保在最上层 */
+}
+
+#start-screen h1{
+    font-size:3rem;
+    color:var(--accent);
+}
+
+#name-input{
+    width:320px;
+    padding:14px;
+    border-radius:30px;
+    border:1px solid var(--accent);
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    text-align:center;
+    font-size: 1.1rem;
+}
+
+#start-btn{
+    padding:12px 40px;
+    border-radius:30px;
+    border:none;
+    background:var(--accent);
+    color:#fff;
+    cursor:pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+#start-btn:hover{
+    background:#ff6b8b;
+    transform: translateY(-2px);
+}
+
+/* ===== 游戏界面 ===== */
+#game{
+    display:none;
+    height:100%;
+    position:relative;
+}
+
+.character{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    height:80%;
+    opacity:.9;
+    max-width: 90%; /* 防止图片过大 */
+}
+
+.dialog{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    min-height:28%;
+    background:var(--bg-glass);
+    backdrop-filter:blur(12px);
+    padding:24px 32px;
+    border-top: 2px solid var(--accent);
+    cursor: pointer;
+}
+
+.speaker{
+    color:var(--accent-soft);
+    font-size:1.3rem;
+    margin-bottom:8px;
+    font-weight: 600;
+}
+
+.text{
+    font-size:1.25rem;
+    line-height:1.7;
+    min-height:3em;
+    padding-right: 40px; /* 给指示器留空间 */
+}
+
+.next{
+    position:absolute;
+    right:30px;
+    bottom:20px;
+    color:var(--accent);
+    font-size: 1.5rem;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* ===== 选项（居中） ===== */
+.options{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+    background: rgba(10, 12, 25, 0.85); /* 添加半透明背景 */
+    backdrop-filter: blur(10px);
+}
+
+.options-inner{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    min-width:400px;
+    max-width: 90%; /* 响应式调整 */
+}
+
+.option{
+    padding:18px 25px;
+    border-radius:14px;
+    background:rgba(30,35,70,.9);
+    cursor:pointer;
+    transition:.3s;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.option:hover{
+    background:var(--accent);
+    transform:translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 143, 163, 0.4);
+}
+
+/* 外部链接选项特殊样式 */
+.external-link {
+    background: linear-gradient(135deg, rgba(30,35,70,.9), rgba(40,45,85,.9));
+    border: 1px solid rgba(255, 143, 163, 0.3);
+}
+
+.external-link:hover {
+    background: linear-gradient(135deg, var(--accent), #ff6b8b);
+}
+
+.option-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    font-size: 1rem;
+}
+
+/* ===== 音频控制按钮 ===== */
+#audio-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+.audio-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(30, 35, 70, 0.8);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.audio-btn:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.1);
+}
+
+.audio-btn.active {
+    background: var(--accent);
+    color: white;
+}
+
+#volume-slider {
+    width: 120px;
+    height: 40px;
+    background: rgba(30, 35, 70, 0.8);
+    border-radius: 20px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--accent);
+}
+
+#volume-slider input {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+}
+
+#volume-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+#volume-slider input::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: none;
+}
+
+/* ===== 最终选项提示 ===== */
+.final-hint {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--accent-soft);
+    font-size: 1.3rem;
+    padding: 0 20px;
+}
+
+.final-hint .player-name {
+    color: var(--accent);
+    font-weight: bold;
+}
