@@ -14,14 +14,10 @@
 }
 
 body{
-    /*background:
+    background:
         radial-gradient(circle at 30% 20%,rgba(255,140,160,.15),transparent 40%),
         radial-gradient(circle at 70% 80%,rgba(120,140,255,.15),transparent 40%),
         var(--bg-main);
-    */
-    background-image: url("背景.jpg");
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     color:var(--text-main);
     height:100vh;
@@ -79,6 +75,9 @@ body{
     display:none;
     height:100%;
     position:relative;
+    background-image: url("背景.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .character{
