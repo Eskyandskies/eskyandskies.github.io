@@ -258,7 +258,7 @@ const optionsData = [
         ["暂时停留片刻"]
     ],
     [
-        ["「CWF」", "CWF/index.html"],
+        ["「CWX」", "CWX/index.html"],
         ["「CSP」", "CSP/index.html"],
         ["「LYH」", "LYH/index.html"],
         ["「ZSY」", "ZSY/ZSY.html"]
