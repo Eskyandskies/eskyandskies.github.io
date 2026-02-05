@@ -258,10 +258,10 @@ const optionsData = [
         ["暂时停留片刻"]
     ],
     [
-        ["「蔡文轩」", "蔡文轩/index.html"],
-        ["「柴赛鹏」", "柴赛鹏/index.html"],
-        ["「廖宇航」", "廖宇航/index.html"],
-        ["「曾思宇」", "曾思宇/ZSY.html"]
+        ["「CWF」", "CWF/index.html"],
+        ["「CSP」", "CSP/index.html"],
+        ["「LYH」", "LYH/index.html"],
+        ["「ZSY」", "ZSY/ZSY.html"]
     ]
 ];
 
